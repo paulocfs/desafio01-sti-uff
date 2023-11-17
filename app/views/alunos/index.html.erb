@@ -1,0 +1,30 @@
+
+
+<%= form_with url: alunos_pesquisar_path, method: :post do |form| %>
+
+    <%= form.label :siape%>
+    <%= form.text_field :siape %><br>
+    <small><%= flash[:notice] %></small><br>
+
+    <%= form.submit "procurar" %><br>
+
+   
+
+<% end %>
+
+
+
+
+<% if @nome_split.present? %>
+<p>Olá <%= @nome_encontrado %>, escolha um iduff de sua prefrência</p>
+<ul>
+    <% @opcoes_de_emails.each do |email| %>
+        <li><%= email %></li>
+    <%end%>
+   
+</ul>
+<%end%>
+
+
+
+
